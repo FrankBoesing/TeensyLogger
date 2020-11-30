@@ -42,7 +42,7 @@
 #define LOG_DEBUG    3
 #define LOG_VERBOSE  4
 
-const __attribute__((unused))  char* __log_str[][5] = {"[ERROR] ", "[WARNING] ", "[INFO] ", "DEBUG] ", "[VERBOSE] "};
+const __attribute__((unused))  char* __log_str[][5] = {"[ERROR] ", "[WARNING] ", "[INFO] ", "[DEBUG] ", "[VERBOSE] "};
 const __attribute__((unused))  unsigned long __tLOG = millis();
 
 #define __MSECS_PER_MIN  (60000UL)
@@ -54,7 +54,7 @@ void _LOGMETA(const int level)
 {
 #if defined(LOGTIMESTAMP)
   unsigned long m = millis() - __tLOG;
-  Serial.printf("%02d:%02d:%02d.%03d ",
+  LOGDEVICE.printf("%02d:%02d:%02d.%03d ",
                 (m % __MSECS_PER_DAY) / __MSECS_PER_HOUR,
                 (m / __MSECS_PER_MIN) % __MSECS_PER_MIN,
                 (m % __MSECS_PER_MIN) / 1000UL,
@@ -62,7 +62,7 @@ void _LOGMETA(const int level)
 #endif
 
 #ifdef LOGPRINTLEVEL
-  LOGDEVICE.printf("%s ", __log_str[0][level]);
+  LOGDEVICE.printf("%s", __log_str[0][level]);
 #endif
 }
 #endif
