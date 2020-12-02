@@ -33,16 +33,17 @@
 #endif
 
 #ifndef LOG_LEVEL
-#define LOG_LEVEL 4
+#define LOG_LEVEL   -1
 #endif
 
+#define LOG_NONE    -1
 #define LOG_ERROR    0
 #define LOG_WARN     1
 #define LOG_INFO     2
 #define LOG_DEBUG    3
 #define LOG_VERBOSE  4
 
-const __attribute__((unused))  char* __log_str[][5] = {"[ERROR] ", "[WARNING] ", "[INFO] ", "[DEBUG] ", "[VERBOSE] "};
+const __attribute__((unused))  char* __log_str[][5] = {"ERROR", "WARNING", "INFO", "DEBUG", "VERBOSE"};
 const __attribute__((unused))  unsigned long __tLOG = millis();
 
 #define __MSECS_PER_MIN  (60000UL)
@@ -54,7 +55,7 @@ void _LOGMETA(const int level)
 {
 #if defined(LOGTIMESTAMP)
   unsigned long m = millis() - __tLOG;
-  LOGDEVICE.printf("%02d:%02d:%02d.%03d ",
+  LOGDEVICE.printf("%02lu:%02lu:%02lu.%03lu ",
                 (m % __MSECS_PER_DAY) / __MSECS_PER_HOUR,
                 (m / __MSECS_PER_MIN) % __MSECS_PER_MIN,
                 (m % __MSECS_PER_MIN) / 1000UL,
@@ -62,7 +63,7 @@ void _LOGMETA(const int level)
 #endif
 
 #ifdef LOGPRINTLEVEL
-  LOGDEVICE.printf("%s", __log_str[0][level]);
+  LOGDEVICE.printf("[%s] ", __log_str[0][level]);
 #endif
 }
 #endif
@@ -75,7 +76,7 @@ void _LOGMETA(const int level)
     } \
   }
 #else
-#define _LOG_GENERIC(level, format, ... )
+#define _LOG_GENERIC(level, format, ... ) {;}
 #endif
 
 #define LOGE(format, ... ) _LOG_GENERIC(LOG_ERROR, format, ##__VA_ARGS__)
