@@ -1,11 +1,11 @@
 
-//Set log flags, optional
+//Set log flags
 #define LOGDEVICE Serial
 #define LOGTIMESTAMP
 #define LOGPRINTLEVEL
 
 
-#include "teensy_logger.h"
+#include "TeensyLogger.h"
 
 void setup() {
   Serial.printf("Log Level: %d\n", LOG_LEVEL);

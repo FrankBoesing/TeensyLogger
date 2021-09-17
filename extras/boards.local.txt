@@ -1,3 +1,12 @@
+
+#teensy41.build.flags.common=-g -Wall -ffunction-sections -fdata-sections -nostdlib -pedantic
+#teensy40.build.flags.common=-g -Wall -ffunction-sections -fdata-sections -nostdlib -ffast-math -ffinite-math-only -fassociative-math -fno-signed-zeros
+#teensyMM.build.flags.common=-g -Wall -ffunction-sections -fdata-sections -nostdlib -ffast-math -ffinite-math-only -fassociative-math -fno-signed-zeros
+#teensy36.build.flags.common=-g -Wall -ffunction-sections -fdata-sections -nostdlib -ffast-math -ffinite-math-only -fassociative-math -fno-signed-zeros
+#teensy35.build.flags.common=-g -Wall -ffunction-sections -fdata-sections -nostdlib -ffast-math -ffinite-math-only -fassociative-math -fno-signed-zeros
+#teensy30.build.flags.common=-g -Wall -ffunction-sections -fdata-sections -nostdlib -ffast-math -ffinite-math-only -fassociative-math -fno-signed-zeros
+#teensyLC.build.flags.common=-g -Wall -ffunction-sections -fdata-sections -nostdlib -ffast-math -ffinite-math-only -fassociative-math -fno-signed-zeros
+
 menu.loglevel=Log Level
 teensy41.menu.loglevel.none=None
 teensy41.menu.loglevel.error=Error
@@ -102,3 +111,54 @@ teensyLC.menu.loglevel.warn.build.log=1
 teensyLC.menu.loglevel.info.build.log=2
 teensyLC.menu.loglevel.debug.build.log=3
 teensyLC.menu.loglevel.verbose.build.log=4
+
+menu.gcc=GCC
+teensy41.menu.gcc.gcc10=GCC 10
+teensy41.menu.gcc.gcc5=GCC 5
+
+teensy41.menu.gcc.gcc10.build.toolchain=arm10/bin/
+teensy41.menu.gcc.gcc5.build.toolchain=arm/bin/
+
+teensyMM.menu.gcc.gcc5=GCC 5
+teensyMM.menu.gcc.gcc5.build.toolchain=arm/bin/
+
+teensy40.menu.gcc.gcc5=GCC 5
+teensy40.menu.gcc.gcc10=GCC 10
+teensy40.menu.gcc.gcc10.build.toolchain=arm10/bin/
+teensy40.menu.gcc.gcc5.build.toolchain=arm/bin/
+
+teensy36.menu.gcc.gcc5=GCC 5
+teensy36.menu.gcc.gcc5.build.toolchain=arm/bin/
+
+teensy35.menu.gcc.gcc5=GCC 5
+teensy35.menu.gcc.gcc5.build.toolchain=arm/bin/
+
+teensy31.menu.gcc.gcc5=GCC 5
+teensy31.menu.gcc.gcc5.build.toolchain=arm/bin/
+
+teensy41.build.command.nm=arm-none-eabi-gcc-nm
+teensyMM.build.command.nm=arm-none-eabi-gcc-nm
+teensy40.build.command.nm=arm-none-eabi-gcc-nm
+teensy36.build.command.nm=arm-none-eabi-gcc-nm
+teensy35.build.command.nm=arm-none-eabi-gcc-nm
+teensy31.build.command.nm=arm-none-eabi-gcc-nm
+teensyLC.build.command.nm=arm-none-eabi-gcc-nm
+
+#teensy41.menu.usb.mtpserial=MTP Disk Serial (Experimental)
+#teensy41.menu.usb.mtpserial.build.usbtype=USB_MTPDISK_SERIAL
+
+#teensyMM.menu.usb.mtpserial=MTP Disk Serial (Experimental)
+#teensyMM.menu.usb.mtpserial.build.usbtype=USB_MTPDISK_SERIAL
+
+#teensy40.menu.usb.mtpserial=MTP Disk Serial (Experimental)
+#teensy40.menu.usb.mtpserial.build.usbtype=USB_MTPDISK_SERIAL
+
+#teensy36.menu.usb.mtpserial=MTP Disk SERIAL (Experimental)
+#teensy36.menu.usb.mtpserial.build.usbtype=USB_MTPDISK_SERIAL
+
+#teensy35.menu.usb.mtpserial=MTP Disk SERIAL (Experimental)
+#teensy35.menu.usb.mtpserial.build.usbtype=USB_MTPDISK_SERIAL
+
+#teensy31.menu.usb.mtpserial=MTP Disk SERIAL (Experimental)
+#teensy31.menu.usb.mtpserial.build.usbtype=USB_MTPDISK_SERIAL
+

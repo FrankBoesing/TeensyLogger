@@ -1,0 +1,34 @@
+
+##OBCOPY: for readable output, copy objcopy.exe from a newer toolchain (gcc 9!)
+
+##Add defs.h patch
+##Add -DLOG_LEVEL={build.log} to build-commandline:
+
+## Precompile Arduino.h header
+
+#recipe.preproc.includes="{compiler.path}{build.toolchain}{build.command.g++}" -M -MG -MP -x c++ -w {build.flags.cpp} {build.flags.cpu} {build.flags.defs} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DF_CPU={build.fcpu} -D{build.usbtype} -DLAYOUT_{build.keylayout} {includes} "{source_file}"
+
+## Preprocessor Macros
+recipe.preproc.macros="{compiler.path}{build.toolchain}{build.command.g++}" -E -CC -x c++ -w {compiler.cpp.flags} {build.flags.common} {build.flags.cpp} {build.flags.cpu} {build.flags.defs} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DF_CPU={build.fcpu} -D{build.usbtype} -DLAYOUT_{build.keylayout}  -DLOG_LEVEL={build.log} -DFrank=1 {includes} "{source_file}" -o "{preprocessed_file_path}"
+
+
+recipe.hooks.sketch.prebuild.0.pattern.windows=cmd /c if not exist "{build.path}\sketch\defs.h" copy nul "{build.path}\sketch\defs.h" >nul
+recipe.hooks.sketch.prebuild.0.pattern.linux=bash -c "[ -f {build.path}/sketch/defs.h ] || touch {build.path}/sketch/defs.h"
+recipe.hooks.sketch.prebuild.0.pattern.macosx=bash -c "[ -f {build.path}/sketch/defs.h ] || touch {build.path}/sketch/defs.h"
+recipe.hooks.sketch.prebuild.1.pattern="{compiler.path}precompile_helper" "{runtime.platform.path}/cores/{build.core}" "{build.path}" "{compiler.path}{build.toolchain}{build.command.g++}" -x c++-header {build.flags.optimize} {build.flags.common} {build.flags.dep} {build.flags.cpp} {build.flags.cpu} {build.flags.defs} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DF_CPU={build.fcpu} -D{build.usbtype} -DLAYOUT_{build.keylayout} -DLOG_LEVEL={build.log} -DFrank=1 "@{build.path}/sketch/defs.h" "-I{runtime.platform.path}/cores/{build.core}" "{build.path}/pch/Arduino.h" -o "{build.path}/pch/Arduino.h.gch"
+
+## Compile c++ files
+recipe.cpp.o.pattern="{compiler.path}{build.toolchain}{build.command.g++}" -c {build.flags.optimize} {build.flags.common} {build.flags.dep} {build.flags.cpp} {build.flags.cpu} {build.flags.defs} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DF_CPU={build.fcpu} -D{build.usbtype} -DLAYOUT_{build.keylayout} -DLOG_LEVEL={build.log} -DFrank=1 "@{build.path}/sketch/defs.h" "-I{build.path}/pch" {includes} "{source_file}" -o "{object_file}"
+
+## Compile c files
+recipe.c.o.pattern="{compiler.path}{build.toolchain}{build.command.gcc}" -c {build.flags.optimize} {build.flags.common} {build.flags.dep} {build.flags.c} {build.flags.cpu} {build.flags.defs} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DF_CPU={build.fcpu} -D{build.usbtype} -DLAYOUT_{build.keylayout} -DLOG_LEVEL={build.log} -DFrank=1 "@{build.path}/sketch/defs.h" {includes} "{source_file}" -o "{object_file}"
+
+## Compile S files
+recipe.S.o.pattern="{compiler.path}{build.toolchain}{build.command.gcc}" -c {build.flags.optimize} {build.flags.common} {build.flags.dep} {build.flags.S} {build.flags.cpu} {build.flags.defs} -DARDUINO={runtime.ide.version} -DARDUINO_{build.board} -DF_CPU={build.fcpu} -D{build.usbtype} -DLAYOUT_{build.keylayout} -DLOG_LEVEL={build.log} -DFrank=1 "@{build.path}/sketch/defs.h" {includes} "{source_file}" -o "{object_file}"
+
+#improve symbols output
+recipe.hooks.postbuild.2.pattern="{compiler.path}stdout_redirect" "{build.path}/{build.project_name}.symnm" "{compiler.path}{build.toolchain}{build.command.nm}" -n -S --defined-only -C "{build.path}/{build.project_name}.elf"
+
+#disable encryption
+recipe.hooks.savehex.postsavehex.1.pattern=
+recipe.hooks.objcopy.postobjcopy.1.pattern=

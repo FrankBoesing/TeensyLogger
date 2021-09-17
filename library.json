@@ -1,0 +1,22 @@
+{
+  "name": "TeensyLogger",
+  "keywords": "Logging",
+  "description": "",
+  "authors": [
+    {
+        "name": "Frank Boesing",
+        "url": "https://github.com/FrankBoesing/",
+	"maintainer": true
+    }   
+  ],
+  "exclude": [
+    "extras",
+  ],
+  "repository":
+  {
+    "type": "git",
+    "url": "https://github.com/FrankBoesing/teensy-logger.git"
+  },
+  "frameworks": "arduino",
+  "platforms": "*"
+}
