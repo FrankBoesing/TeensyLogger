@@ -14,12 +14,12 @@ teensy41.menu.loglevel.warn=Warnings
 teensy41.menu.loglevel.info=Info
 teensy41.menu.loglevel.debug=Debug
 teensy41.menu.loglevel.verbose=Verbose
-teensy41.menu.loglevel.none.build.log=-1
-teensy41.menu.loglevel.error.build.log=0
-teensy41.menu.loglevel.warn.build.log=1
-teensy41.menu.loglevel.info.build.log=2
-teensy41.menu.loglevel.debug.build.log=3
-teensy41.menu.loglevel.verbose.build.log=4
+teensy41.menu.loglevel.none.build.log=-DLOG_LEVEL=-1
+teensy41.menu.loglevel.error.build.log=-DLOG_LEVEL=0
+teensy41.menu.loglevel.warn.build.log=-DLOG_LEVEL=1
+teensy41.menu.loglevel.info.build.log=-DLOG_LEVEL=2
+teensy41.menu.loglevel.debug.build.log=-DLOG_LEVEL=3
+teensy41.menu.loglevel.verbose.build.log=-DLOG_LEVEL=4
 
 teensy40.menu.loglevel.none=None
 teensy40.menu.loglevel.error=Error
@@ -27,12 +27,12 @@ teensy40.menu.loglevel.warn=Warnings
 teensy40.menu.loglevel.info=Info
 teensy40.menu.loglevel.debug=Debug
 teensy40.menu.loglevel.verbose=Verbose
-teensy40.menu.loglevel.none.build.log=-1
-teensy40.menu.loglevel.error.build.log=0
-teensy40.menu.loglevel.warn.build.log=1
-teensy40.menu.loglevel.info.build.log=2
-teensy40.menu.loglevel.debug.build.log=3
-teensy40.menu.loglevel.verbose.build.log=4
+teensy40.menu.loglevel.none.build.log=-DLOG_LEVEL=-1
+teensy40.menu.loglevel.error.build.log=-DLOG_LEVEL=0
+teensy40.menu.loglevel.warn.build.log=-DLOG_LEVEL=1
+teensy40.menu.loglevel.info.build.log=-DLOG_LEVEL=2
+teensy40.menu.loglevel.debug.build.log=-DLOG_LEVEL=3
+teensy40.menu.loglevel.verbose.build.log=-DLOG_LEVEL=4
 
 teensyMM.menu.loglevel.none=None
 teensyMM.menu.loglevel.error=Error
@@ -40,12 +40,12 @@ teensyMM.menu.loglevel.warn=Warnings
 teensyMM.menu.loglevel.info=Info
 teensyMM.menu.loglevel.debug=Debug
 teensyMM.menu.loglevel.verbose=Verbose
-teensyMM.menu.loglevel.none.build.log=-1
-teensyMM.menu.loglevel.error.build.log=0
-teensyMM.menu.loglevel.warn.build.log=1
-teensyMM.menu.loglevel.info.build.log=2
-teensyMM.menu.loglevel.debug.build.log=3
-teensyMM.menu.loglevel.verbose.build.log=4
+teensyMM.menu.loglevel.none.build.log=-DLOG_LEVEL=-1
+teensyMM.menu.loglevel.error.build.log=-DLOG_LEVEL=0
+teensyMM.menu.loglevel.warn.build.log=-DLOG_LEVEL=1
+teensyMM.menu.loglevel.info.build.log=-DLOG_LEVEL=2
+teensyMM.menu.loglevel.debug.build.log=-DLOG_LEVEL=3
+teensyMM.menu.loglevel.verbose.build.log=-DLOG_LEVEL=4
 
 teensy36.menu.loglevel.none=None
 teensy36.menu.loglevel.error=Error
@@ -53,12 +53,12 @@ teensy36.menu.loglevel.warn=Warnings
 teensy36.menu.loglevel.info=Info
 teensy36.menu.loglevel.debug=Debug
 teensy36.menu.loglevel.verbose=Verbose
-teensy36.menu.loglevel.none.build.log=-1
-teensy36.menu.loglevel.error.build.log=0
-teensy36.menu.loglevel.warn.build.log=1
-teensy36.menu.loglevel.info.build.log=2
-teensy36.menu.loglevel.debug.build.log=3
-teensy36.menu.loglevel.verbose.build.log=4
+teensy36.menu.loglevel.none.build.log=-DLOG_LEVEL=-1
+teensy36.menu.loglevel.error.build.log=-DLOG_LEVEL=0
+teensy36.menu.loglevel.warn.build.log=-DLOG_LEVEL=1
+teensy36.menu.loglevel.info.build.log=-DLOG_LEVEL=2
+teensy36.menu.loglevel.debug.build.log=-DLOG_LEVEL=3
+teensy36.menu.loglevel.verbose.build.log=-DLOG_LEVEL=4
 
 teensy35.menu.loglevel.none=None
 teensy35.menu.loglevel.error=Error
@@ -66,12 +66,12 @@ teensy35.menu.loglevel.warn=Warnings
 teensy35.menu.loglevel.info=Info
 teensy35.menu.loglevel.debug=Debug
 teensy35.menu.loglevel.verbose=Verbose
-teensy35.menu.loglevel.none.build.log=-1
-teensy35.menu.loglevel.error.build.log=0
-teensy35.menu.loglevel.warn.build.log=1
-teensy35.menu.loglevel.info.build.log=2
-teensy35.menu.loglevel.debug.build.log=3
-teensy35.menu.loglevel.verbose.build.log=4
+teensy35.menu.loglevel.none.build.log=-DLOG_LEVEL=-1
+teensy35.menu.loglevel.error.build.log=-DLOG_LEVEL=0
+teensy35.menu.loglevel.warn.build.log=-DLOG_LEVEL=1
+teensy35.menu.loglevel.info.build.log=-DLOG_LEVEL=2
+teensy35.menu.loglevel.debug.build.log=-DLOG_LEVEL=3
+teensy35.menu.loglevel.verbose.build.log=-DLOG_LEVEL=4
 
 teensy31.menu.loglevel.none=None
 teensy31.menu.loglevel.error=Error
@@ -79,12 +79,12 @@ teensy31.menu.loglevel.warn=Warnings
 teensy31.menu.loglevel.info=Info
 teensy31.menu.loglevel.debug=Debug
 teensy31.menu.loglevel.verbose=Verbose
-teensy31.menu.loglevel.none.build.log=-1
-teensy31.menu.loglevel.error.build.log=0
-teensy31.menu.loglevel.warn.build.log=1
-teensy31.menu.loglevel.info.build.log=2
-teensy31.menu.loglevel.debug.build.log=3
-teensy31.menu.loglevel.verbose.build.log=4
+teensy31.menu.loglevel.none.build.log=-DLOG_LEVEL=-1
+teensy31.menu.loglevel.error.build.log=-DLOG_LEVEL=0
+teensy31.menu.loglevel.warn.build.log=-DLOG_LEVEL=1
+teensy31.menu.loglevel.info.build.log=-DLOG_LEVEL=2
+teensy31.menu.loglevel.debug.build.log=-DLOG_LEVEL=3
+teensy31.menu.loglevel.verbose.build.log=-DLOG_LEVEL=4
 
 teensy30.menu.loglevel.none=None
 teensy30.menu.loglevel.error=Error
@@ -92,12 +92,12 @@ teensy30.menu.loglevel.warn=Warnings
 teensy30.menu.loglevel.info=Info
 teensy30.menu.loglevel.debug=Debug
 teensy30.menu.loglevel.verbose=Verbose
-teensy30.menu.loglevel.none.build.log=-1
-teensy30.menu.loglevel.error.build.log=0
-teensy30.menu.loglevel.warn.build.log=1
-teensy30.menu.loglevel.info.build.log=2
-teensy30.menu.loglevel.debug.build.log=3
-teensy30.menu.loglevel.verbose.build.log=4
+teensy30.menu.loglevel.none.build.log=-DLOG_LEVEL=-1
+teensy30.menu.loglevel.error.build.log=-DLOG_LEVEL=0
+teensy30.menu.loglevel.warn.build.log=-DLOG_LEVEL=1
+teensy30.menu.loglevel.info.build.log=-DLOG_LEVEL=2
+teensy30.menu.loglevel.debug.build.log=-DLOG_LEVEL=3
+teensy30.menu.loglevel.verbose.build.log=-DLOG_LEVEL=4
 
 teensyLC.menu.loglevel.none=None
 teensyLC.menu.loglevel.error=Error
@@ -105,12 +105,12 @@ teensyLC.menu.loglevel.warn=Warnings
 teensyLC.menu.loglevel.info=Info
 teensyLC.menu.loglevel.debug=Debug
 teensyLC.menu.loglevel.verbose=Verbose
-teensyLC.menu.loglevel.none.build.log=-1
-teensyLC.menu.loglevel.error.build.log=0
-teensyLC.menu.loglevel.warn.build.log=1
-teensyLC.menu.loglevel.info.build.log=2
-teensyLC.menu.loglevel.debug.build.log=3
-teensyLC.menu.loglevel.verbose.build.log=4
+teensyLC.menu.loglevel.none.build.log=-DLOG_LEVEL=-1
+teensyLC.menu.loglevel.error.build.log=-DLOG_LEVEL=0
+teensyLC.menu.loglevel.warn.build.log=-DLOG_LEVEL=1
+teensyLC.menu.loglevel.info.build.log=-DLOG_LEVEL=2
+teensyLC.menu.loglevel.debug.build.log=-DLOG_LEVEL=3
+teensyLC.menu.loglevel.verbose.build.log=-DLOG_LEVEL=4
 
 menu.gcc=GCC
 teensy41.menu.gcc.gcc10=GCC 10
