@@ -1,5 +1,5 @@
 /* Teensy Logger library code is placed under the MIT license
- * Copyright (c) 2020 Frank Bösing
+ * Copyright (c) 2020,2021 Frank Bösing
  *
  * Permission is hereby granted, free of charge, to any person obtaining
  * a copy of this software and associated documentation files (the
@@ -69,14 +69,14 @@ void _LOGMETA(const int level)
 #endif
 
 #ifdef LOG_LEVEL
-#define _LOG_GENERIC(level, format, ... ) { \
+#define _LOG_GENERIC(level, format, ... ) do { \
     if (level <= LOG_LEVEL) { \
       _LOGMETA(level); \
       LOGDEVICE.printf(format "\n", ##__VA_ARGS__); \
     } \
-  }
+  } while(0)
 #else
-#define _LOG_GENERIC(level, format, ... ) {;}
+#define _LOG_GENERIC(level, format, ... ) do {;} while(0)
 #endif
 
 #define LOGE(format, ... ) _LOG_GENERIC(LOG_ERROR, format, ##__VA_ARGS__)
